@@ -1,0 +1,42 @@
+body{
+    background-image: url("../images/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#rides_disponibles{
+    color: dodgerblue
+}
+ul{
+    padding: 0 !important;
+}
+.whatshot{
+    color: #e65100;
+}
+.table_rides{
+    background-color: #212121;
+    color: white;
+}
+tr td{
+    border-radius: 0;
+    text-align: center;
+}
+.collapsible-body{
+    padding: 0;
+}
+.collapsible-header{
+    background-image: url("https://cdn.dribbble.com/users/143640/screenshots/2666261/fueled-24112015-jm_2x.gif");
+    background-size: 10%;
+    background-position: right;
+    background-repeat: no-repeat;
+    border: none;
+}
+.modal-footer a{
+    width: 100%;
+    text-align: center;
+}
+#title_login i,#log{
+    color: dodgerblue;
+}
+
+
