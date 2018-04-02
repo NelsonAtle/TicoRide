@@ -1,0 +1,75 @@
+body{
+    background-image: url("../images/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.button-collapse{
+    display: block !important;
+}
+#menulogo{
+    width: 90%;
+}
+#menulogo i{
+ color: dodgerblue;
+}
+nav i {
+    color: dodgerblue;
+}
+#nombre_muestra{
+    color: dodgerblue !important;
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+#nombre_muestra i{
+    font-size: 20px;
+}
+.sep{
+    margin-top: 15% !important;
+}
+
+#contenedor{
+    height: 90vh;
+    overflow-y: hidden;
+}
+#dashboard,#buscar{
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+.table_rides{
+    background-color: #212121;
+    color: white;
+}
+tr td{
+    border-radius: 0;
+    text-align: center;
+}
+.collapsible-body{
+    padding: 0;
+}
+#dash,#rides{
+    color: rgb(3, 104, 199);
+}
+.modal-footer a{
+    width: 100%;
+    text-align: center;
+}
+.modal i{
+color: dodgerblue;
+}
+.tab{
+    display: block !important;
+    text-align: left !important;
+}
+.tab a{
+    color: black !important;
+}
+
+.tab .active {
+    color: dodgerblue !important;
+}
+.crud{
+    width: 52px;
+}
