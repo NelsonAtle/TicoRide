@@ -1,4 +1,6 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,11 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Tico-Ride</title>
-        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="external/css/home.css">
+        <script src="http://localhost/ticoride/external/js/jquery.js"></script>
+        <link rel="stylesheet" href="materialize/css/materialize.min.css">
+        <script src="materialize/js/materialize.min.js"></script>
+        <link href="materialize/iconos/iconfont/material-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://localhost/ticoride/external/css/home.css">
     </head>
     <body>
         <nav>
@@ -20,13 +22,13 @@
             </div>
         </nav>
         <ul id="slide-out" class="side-nav tabs">
-            <li>
+            <li style="height: 170px; margin-bottom: -45px; background-image: url('external/images/source.gif'); background-position: center; background-size: cover;">
                 <div class="user-view">
                     <div class="container" id="menulogo">
-                        <h3><i class="material-icons">send</i>Tico-Ride</h3>
+                        <h3 style="color: white;"><i class="material-icons">send</i>Tico-Ride</h3>
                     </div>
                    
-                    <h5 id="nombre_muestra"><i class="material-icons">account_circle</i>Nelson Barrantes</h5>
+                    <h5 id="nombre_muestra"></h5>
                 </div>
                 
             </li>
@@ -39,51 +41,24 @@
             <li class="tab">
                 <a href="#buscar"><i class="material-icons">search</i>Buscar Rides</a>
             
+            </li>
+            <li class="tab">
+                <a href="#apartados"><i class="material-icons">search</i>Rides Apartados</a>
+            
+            </li>
             <li>
                 <a href="#ajustes" class="modal-trigger"><i class="material-icons">build</i>Ajustes</a>
             </li>
             <li>
-                <a href=""><i class="material-icons">cancel</i>Salir</a>
+                <a href="#" onclick="postSalir();"><i class="material-icons">cancel</i>Salir</a>
             </li>
         </ul>
         <div id="contenedor">
             <div id="dashboard">
                 <h5 id="dash" >DASHBOARD</h5>
                 <div class="row">
-                    <ul class="center collapsible popout" data-collapsible="accordion">
-                        <li>
-                            <div class="collapsible-header z-depth-4">
-                                <i class="material-icons whatshot">whatshot</i>First
-                            </div>
-                            <div class="collapsible-body">
-                                <table>
-                                    <tr class="table_rides">
-                                        <td>Nombre</td>
-                                        <td>Salida</td>
-                                        <td>LLegada</td>
-                                        <td>Hora Salida</td>
-                                        <td>Hora LLegada</td>
-                                        <td>Campos</td>
-                                        <td>Días</td>
-                                        <td>Descripción</td>
-                                        <td class="crud"></td>
-                                        <td class="crud"></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><a href="#mod_ride" class="btn modal-trigger"><i class="material-icons">autorenew</i></a></td>
-                                        <td><a href="" class="btn red"><i class="material-icons">clear</i></a></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </li>
+                    <ul class="center collapsible popout" data-collapsible="accordion" id="rides_user">
+                        
                     </ul>
                 </div>
                 <div class="fixed-action-btn ">
@@ -95,40 +70,16 @@
             <div id="buscar">
                 <h5 id="rides" >Lista Rides Disponibles</h5>
                 <div class="row">
-                    <ul class="center collapsible popout" data-collapsible="accordion">
-                        <li>
-                            <div class="collapsible-header z-depth-4">
-                                <i class="material-icons whatshot">whatshot</i>First
-                            </div>
-                            <div class="collapsible-body">
-                                <table>
-                                    <tr class="table_rides">
-                                        <td>Chofer</td>
-                                        <td>Nombre</td>
-                                        <td>Salida</td>
-                                        <td>LLegada</td>
-                                        <td>Hora Salida</td>
-                                        <td>Hora LLegada</td>
-                                        <td>Campos</td>
-                                        <td>Días</td>
-                                        <td>Descripción</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </li>
+                    <ul class="center collapsible popout" data-collapsible="accordion" id="listaRidesBuscar">
+                       
+                    </ul>
+                </div>
+            </div>
+            <div id="apartados">
+                <h5 id="rideapartados" >Lista Rides Apartados</h5>
+                <div class="row">
+                    <ul class="center collapsible popout" data-collapsible="accordion" id="listaRidesApartados">
+                       
                     </ul>
                 </div>
             </div>
@@ -136,14 +87,10 @@
         <!-- Modal Nuevo Ride -->
         <div id="crear_ride" class="modal modal-fixed-footer">
             <form action="" method="post">
+                <input type="text" style="display: none;" id="conductor" >
                 <div class="modal-content">
                     <h4 class="center" id="title_login"><i class="material-icons">send</i>Tico-Ride<i class="material-icons">chevron_right</i>Registro</h4>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">bookmark</i>
-                            <input id="name_ride" type="text" class="validate" name="nombre" require>
-                            <label for="name_ride">Nombre Ride</label>
-                        </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">call_made</i>
                             <input id="salida" type="text" class="validate" name="salida" require>
@@ -171,7 +118,7 @@
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">date_range</i>
-                            <select multiple>
+                            <select multiple id="dias">
                                 <option value="" disabled selected>Seleccione los días</option>
                                 <option value="Lunes">Lunes</option>
                                 <option value="Martes">Martes</option>
@@ -191,7 +138,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect btn-flat">Crear Ride</a>
+                    <a href="#!" onclick="postNewRide();" class="modal-action modal-close waves-effect btn-flat">Crear Ride</a>
                 </div>
             </form>
         </div>
@@ -201,11 +148,6 @@
                 <div class="modal-content">
                     <h4 class="center" id="title_login"><i class="material-icons">send</i>Tico-Ride<i class="material-icons">chevron_right</i>Modificar</h4>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">bookmark</i>
-                            <input id="name_rid" type="text" class="validate" name="nombre" require>
-                            <label for="name_rid">Nombre Ride</label>
-                        </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">call_made</i>
                             <input id="salid" type="text" class="validate" name="salida" require>
@@ -233,7 +175,7 @@
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">date_range</i>
-                            <select multiple>
+                            <select multiple id="dias_edit">
                                 <option value="" disabled selected>Seleccione los días</option>
                                 <option value="Lunes">Lunes</option>
                                 <option value="Martes">Martes</option>
@@ -253,7 +195,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect btn-flat">Actualizar Ride</a>
+                    <button class="modal-action modal-close waves-effect btn-flat" value="" onclick="putRide(this);" id="modRide">Actualizar Ride</button>
                 </div>
             </form>
         </div>
@@ -296,7 +238,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect btn-flat">Cambiar</a>
+                <a href="#!" onclick="putUpdateUser();" class="modal-action modal-close waves-effect btn-flat">Cambiar</a>
             </div>
             </form>
       </div>
@@ -324,5 +266,17 @@
                 $('ul.tabs').tabs();
             });
         </script>
+       
+        <script src="external/js/usuarios.js"></script>
+        <script src="external/js/rides.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                getUsuarioData(<?php echo $_SESSION["ride"]; ?>);
+                getIdRides();
+                getRidesUser();
+                getRideApartados();
+            });
+           
+    </script>
     </body>
 </html>

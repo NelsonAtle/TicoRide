@@ -20,6 +20,12 @@ class Principal extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('principal');
+		session_start();
+		if (isset($_SESSION["ride"])) {
+			$this->load->view('home');
+		}else{
+			$this->load->view('principal');
+		}
 	}
+	
 }

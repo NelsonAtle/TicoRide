@@ -12,6 +12,9 @@ body{
 #menulogo i{
  color: dodgerblue;
 }
+.whatshot{
+    color: #e65100 !important;
+}
 nav i {
     color: dodgerblue;
 }
@@ -32,7 +35,7 @@ nav i {
     height: 90vh;
     overflow-y: hidden;
 }
-#dashboard,#buscar{
+#dashboard,#buscar,#apartados{
     padding: 15px;
     height: 100%;
     width: 100%;
@@ -49,7 +52,7 @@ tr td{
 .collapsible-body{
     padding: 0;
 }
-#dash,#rides{
+#dash,#rides,#rideapartados{
     color: rgb(3, 104, 199);
 }
 .modal-footer a{

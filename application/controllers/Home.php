@@ -20,6 +20,11 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('home');
+		session_start();
+		if (isset($_SESSION["ride"])) {
+			$this->load->view('home');
+		}else{
+			$this->load->view('principal');
+		}
 	}
 }
